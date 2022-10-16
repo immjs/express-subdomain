@@ -36,7 +36,7 @@ export default function(subdomain: any, fn: any) {
         break;
       }
       if (currentSubdomain === '*') {
-        req._subdomainLevel = Infinity;
+        req._subdomainLevel = req.subdomains.length;
         break;
       }
       if (currentSubdomain !== currentRelevantSubdomain) {
