@@ -19,10 +19,10 @@ function default_1(subdomain, fn) {
         for (let i in subdomains) {
             const currentSubdomain = subdomains[i];
             const currentRelevantSubdomain = relevantSubdomains[i];
-            if (currentSubdomain === '@' && currentRelevantSubdomain == undefined) {
+            if (currentSubdomain === '@' && currentRelevantSubdomain === undefined) {
                 break;
             }
-            if (currentSubdomain === '*') {
+            if (currentSubdomain === '*' && currentRelevantSubdomain !== undefined) {
                 req._subdomainLevel = req.subdomains.length;
                 break;
             }
