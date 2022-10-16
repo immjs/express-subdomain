@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-export default function(subdomain: any, fn: any) {
+export default function(subdomain: string, fn: express.Router) {
   if (!subdomain || typeof subdomain !== "string") {
     throw new Error("The first parameter must be a string representing the subdomain");
   } 
