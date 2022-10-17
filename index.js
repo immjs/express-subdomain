@@ -5,7 +5,7 @@ function default_1(subdomain, fn) {
         throw new Error("The first parameter must be a string representing the subdomain");
     }
     let subdomains = subdomain.split('.').reverse();
-    const invalidSymbol = ['*', '@'].every((v) => (subdomains.includes(v)) === (subdomains[0] === v));
+    const invalidSymbol = ['*', '@'].find((v) => (subdomains.includes(v)) !== (subdomains[0] === v));
     if (invalidSymbol)
         throw new Error(`There can not be any subdomains beyond '${invalidSymbol}'`);
     //check fn handles three params..
