@@ -1,6 +1,6 @@
 {
   "name": "@immjs/express-subdomain",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/immjs/express-subdomain.git"
@@ -15,7 +15,7 @@
     "express-subdomain",
     "subdomain"
   ],
-  "author": "Jerome Wang <immjs>",
+  "author": "Jerome Wang <contact@immjs.dev>",
   "license": "Hippocratic-2.1",
   "devDependencies": {
     "@types/express": "^4.17.14",

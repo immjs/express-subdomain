@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function default_1(subdomain, fn) {
+function default_1(subdomain, fn, offset = 0) {
     if (!subdomain || typeof subdomain !== "string") {
         throw new Error("The first parameter must be a string representing the subdomain");
     }
@@ -14,7 +14,7 @@ function default_1(subdomain, fn) {
     }
     return function (req, res, next) {
         req._subdomainLevel || (req._subdomainLevel = 0);
-        let relevantSubdomains = req.subdomains.reverse().slice(req._subdomainLevel);
+        let relevantSubdomains = req.subdomains.reverse().slice(req._subdomainLevel + offset);
         let match = true;
         for (let i in subdomains) {
             const currentSubdomain = subdomains[i];

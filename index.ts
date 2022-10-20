@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-export default function(subdomain: string, fn: express.Router) {
+export default function(subdomain: string, fn: express.Router, offset: number = 0) {
   if (!subdomain || typeof subdomain !== "string") {
     throw new Error("The first parameter must be a string representing the subdomain");
   } 
@@ -25,7 +25,7 @@ export default function(subdomain: string, fn: express.Router) {
 
   return function (req: express.Request, res: express.Response, next: express.NextFunction) {
     req._subdomainLevel ||= 0;
-    let relevantSubdomains = req.subdomains.reverse().slice(req._subdomainLevel);
+    let relevantSubdomains = req.subdomains.reverse().slice(req._subdomainLevel + offset);
 
     let match = true;
     for (let i in subdomains) {

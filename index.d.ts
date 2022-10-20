@@ -6,4 +6,4 @@ declare global {
         }
     }
 }
-export default function (subdomain: string, fn: express.Router): (req: express.Request, res: express.Response, next: express.NextFunction) => void;
+export default function (subdomain: string, fn: express.Router, offset?: number): (req: express.Request, res: express.Response, next: express.NextFunction) => void;
