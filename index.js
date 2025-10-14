@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function default_1(subdomain, fn, offset = 0) {
+export default function (subdomain, fn, offset = 0) {
     if (!subdomain || typeof subdomain !== "string") {
         throw new Error("The first parameter must be a string representing the subdomain");
     }
@@ -40,5 +38,4 @@ function default_1(subdomain, fn, offset = 0) {
         }
     };
 }
-exports.default = default_1;
 ;
